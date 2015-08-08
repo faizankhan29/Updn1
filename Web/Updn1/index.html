@@ -47,16 +47,16 @@ Upside Down
 <style type="text/css">
 
   @-webkit-keyframes spincube {
-    from,to  { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    16%     /* { -webkit-transform: rotateY(-90deg);                           }
+    from{ -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    /*16%      { -webkit-transform: rotateY(-90deg);                           }
     33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg);            }
     50%      { -webkit-transform: rotateY(-180deg) rotateZ(90deg);           }
     66%      { -webkit-transform: rotateY(-270deg) rotateX(90deg);        }*/
-    83%      { -webkit-transform: rotateX(90deg);                            }
+    to,83%      { -webkit-transform: rotateX(90deg) translateZ(50px);                            }
   }
 
   @keyframes spincube {
-    from {
+    from{
       -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
       -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
       transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -81,24 +81,25 @@ Upside Down
       -ms-transform: rotateY(-270deg) rotateX(90deg);
       transform: rotateY(-270deg) rotateX(90deg);
     }*/
-    83% {
+    to,83% {
       -moz-transform: rotateX(90deg);
       -ms-transform: rotateX(90deg);
       transform: rotateX(90deg);
     }
   }
 
-  .cubespinner:hover {
-    /*-webkit-animation-name: spincube;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-duration: s;*/
+  .cubespinner:hover,cubespinner:active {
+    -webkit-animation-name: spincube;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-duration: 1s;
 
+    box-shadow: 0px -30px 100px rgba(0, 0, 0, 0.2) inset;
     animation-name: spincube;
-    animation-timing-function: ease;
-    animation-iteration-count: 3;
-    animation-duration: 2s;
-
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+      
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
@@ -110,49 +111,99 @@ Upside Down
     transform-origin: 60px 60px 0;
   }
 
-  .cubespinner div {
-    position: absolute;
-    width: 120px;
-    height: 120px;
+
+      
+  .cubespinner .face1  {
+      position: absolute;
+    width: 200px;
+    /*height: 120px;*/
     border: 1px solid #ccc;
-    background: rgba(255,255,255,0.8);
+    /*background: rgba(255,255,255,0.8);*/
     box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
     line-height: 120px;
     text-align: center;
     font-size: 100px;
-  }
 
-  .cubespinner .face1 {
     -webkit-transform: translateZ(60px);
     -moz-transform: translateZ(60px);
     -ms-transform: translateZ(60px);
     transform: translateZ(60px);
   }
   .cubespinner .face2 {
-    -webkit-transform: rotateY(90deg) translateZ(60px);
+      position: absolute;
+    width: 200px;
+    /*height: 120px;*/
+    border: 1px solid #ccc;
+    /*background: rgba(255,255,255,0.8);*/
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+
+  /*  -webkit-transform: rotateY(90deg) translateZ(60px);
     -moz-transform: rotateY(90deg) translateZ(60px);
     -ms-transform: rotateY(90deg) translateZ(60px);
-    transform: rotateY(90deg) translateZ(60px);
+    transform: rotateY(90deg) translateZ(60px);*/
   }
   .cubespinner .face3 {
+      position: absolute;
+    width: 200px;
+    /*height: 120px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);*/
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+
     -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
     -moz-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
     -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
     transform: rotateY(90deg) rotateX(90deg) translateZ(60px);
   }
   .cubespinner .face4 {
-    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+      position: absolute;
+    width: 200px;
+    /*height: 120px;*/
+    border: 1px solid #ccc;
+    /*background: rgba(255,255,255,0.8);*/
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+
+    /*-webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
     -moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
     -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
-    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px);*/
   }
   .cubespinner .face5 {
+      position: absolute;
+    width: 200px;
+    /*height: 120px;*/
+    border: 1px solid #ccc;
+    /*background: rgba(255,255,255,0.8);*/
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+
     -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
     -moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
     -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
     transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px);
   }
-  .cubespinner .face6 {
+ .cubespinner .face6 {
+     position: absolute;
+    width: 200px;
+    height: 120px;
+    border: 1px solid #ccc;
+    /*background: rgba(255,255,255,0.8);*/
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    line-height: 120px;
+    text-align: center;
+    font-size: 100px;
+
     -webkit-transform: rotateX(-90deg) translateZ(60px);
     -moz-transform: rotateX(-90deg) translateZ(60px);
     -ms-transform: rotateX(-90deg) translateZ(60px);
@@ -160,20 +211,52 @@ Upside Down
   }
 
 </style>
-
-<div class="stage" style="width: 120px; height: 120px;">
-<div class="cubespinner">
-<div class="face1">1</div>
-<div class="face2">2</div>
-<div class="face3">3</div>
-<div class="face4">4</div>
-<div class="face5">5</div>
-<div class="face6">6</div>
-</div>
-</div>    
     
-    <!--<h2>We are the ABC</h2>        
-</div>-->
+    
+<div class="mid">
+    <h2>We are the ABC</h2>        
+</div>
+<div class="stage" id="panel">
+       <div class="col-sm-3">
+    <div class="cubespinner" id="3">
+<div class="face1">1</div>
+<div class="face2"></div>
+<div class="face3"></div>
+<div class="face4"></div>
+<div class="face5"></div>
+<div class="face6">6</div>
+</div></div>
+    
+    <div class="col-sm-3">
+    <div class="cubespinner" id="3">
+<div class="face1">1</div>
+<div class="face2"></div>
+<div class="face3"></div>
+<div class="face4"></div>
+<div class="face5"></div>
+<div class="face6">6</div>
+</div></div>
+    
+     <div class="col-sm-3">
+    <div class="cubespinner" id="3">
+<div class="face1">1</div>
+<div class="face2"></div>
+<div class="face3"></div>
+<div class="face4"></div>
+<div class="face5"></div>
+<div class="face6">6</div>
+</div></div>    
+     <div class="col-sm-3">
+    <div class="cubespinner" id="3">
+<div class="face1">1</div>
+<div class="face2"></div>
+<div class="face3"></div>
+<div class="face4"></div>
+<div class="face5"></div>
+<div class="face6">6</div>
+</div></div>
+    
+    </div>
         <!--<a class="trigger" href="/our-work/mainpeak/">
 						<div class="feature three">
 							<div class="face cover"><img src="http://humaan.com/wp-content/themes/epic/img/slides/thumblogo-mainpeak.png" srcset=""
@@ -181,7 +264,7 @@ Upside Down
 							<div class="face hover"><p class="info">Building a National award winning eCommerce website with Australian adventure retailer <strong>Mainpeak</strong>.</p></div>
 						</div>
 					</a>-->
-<div class="jumbotron" id="Footer">
+<!--<div class="jumbotron" id="Footer">
 <div class="col-sm-4"><a float=left href=>fb.com/updn</a></div>
     <div class="col-sm-4"><a float=center href=>Logo</a></div>
     <div class="col-sm-4"><a href=>twitter.com/updn</a></div>
@@ -189,7 +272,7 @@ Upside Down
     
     
     
-</div>
+</div-->
     
     
 
